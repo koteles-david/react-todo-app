@@ -1,9 +1,9 @@
-export default function Typography({ children }: { children: React.ReactNode }) {
+import type { TypographyProps } from "@/types";
+import { createElement } from "react";
+export default function Typography({ children, type }: TypographyProps) {
   return (
     <>
-      <h1>
-        { children }
-      </h1>
+      { createElement(type, {}, children) }
     </>
   )
 }
